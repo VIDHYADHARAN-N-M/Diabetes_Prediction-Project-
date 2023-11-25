@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>predicted Page</title>
+</head>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 32px;
+}
+
+
+.result {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/
+.result h2 {
+    font-size: 24px;
+}
+
+
+.result p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+.result img {
+    max-width: 35%;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+</style>
+<body>
+    <header>
+        <h1>PREDICATED</h1>
+    </header>
+    <main>
+        <section class="result">
+            {%if data == 0%}
+            <h1>YOU ARE IN HEALTHY CONDITION</h1> 
+            <P>you diabtes result is negative</p> 
+            <img src="{{url_for('static', filename ='healthy.png')}}">  
+
+            {%else%}
+            <h1>OH! YOUR HEALTH IS TOO BAD,IMMEDIATELY MEET DOCTOR</h1>
+            <img src="{{url_for('static', filename ='bad.png')}}">
+            
+            {%endif%}
+
+            <br><br>
+            <a href='/'>go back to home page</a>
+
+        </section>
+    </main>
+</body>
+</html>
