@@ -9,7 +9,7 @@ model=pickle.load(open('dia.pkl','rb'))
 
 @app.route('/')
 def hello_world():
-    return render_template("dia.html")
+    return render_template("index.html")
 
 
 @app.route('/predict',methods=['POST','GET'])
@@ -27,7 +27,7 @@ def predict():
         data=0
     
     print(output,data)
-    return render_template("afterdia.html",data=data)
+    return render_template("predicted_page.html",data=data)
         
 
 if __name__ == '__main__':
