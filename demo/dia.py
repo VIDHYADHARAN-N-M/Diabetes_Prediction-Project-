@@ -22,7 +22,7 @@ RF=RandomForestClassifier()
 
 RF.fit(X_train ,Y_train)
 
-rfc_pred = RF.predict(X_train)
+rfc_pred = RF.predict(X_test)
 
 pickle.dump(RF,open('dia.pkl','wb'))
 
